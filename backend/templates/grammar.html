@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+  <title>Scholar - Online School HTML5 Template</title>
+  <link rel="stylesheet" type="text/css" href="../static/styles.css">
+
+  <!-- Bootstrap core CSS -->
+  <link href="../static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+
+  <!-- Additional CSS Files -->
+  <link rel="stylesheet" href="../static/assets/css/fontawesome.css">
+  <link rel="stylesheet" href="../static/assets/css/templatemo-scholar.css">
+  <link rel="stylesheet" href="../static/assets/css/owl.css">
+  <link rel="stylesheet" href="../static/assets/css/animate.css">
+  <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+  <!--
+
+TemplateMo 586 Scholar
+
+https://templatemo.com/tm-586-scholar
+
+-->
+</head>
+
+<body>
+
+  <!-- ***** Preloader Start ***** -->
+  <div id="js-preloader" class="js-preloader">
+    <div class="preloader-inner">
+      <span class="dot"></span>
+      <div class="dots">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </div>
+  <!-- ***** Preloader End ***** -->
+
+  <!-- ***** Header Area Start ***** -->
+  <header class="header-area header-sticky">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <nav class="main-nav">
+            <!-- ***** Logo Start ***** -->
+            <a href="/" class="logo">
+              <h1>Scholar</h1>
+            </a>
+            <!-- ***** Logo End ***** -->
+            <!-- ***** Serach Start ***** -->
+            <div class="search-input">
+              <form id="search" action="#">
+                <input type="text" placeholder="Type Something" id='searchText' name="searchKeyword"
+                  onkeypress="handle" />
+                <i class="fa fa-search"></i>
+              </form>
+            </div>
+            <!-- ***** Serach Start ***** -->
+            <!-- ***** Menu Start ***** -->
+            <ul class="nav">
+              <li class="scroll-to-section"><a href="/">Home</a></li>
+              <li class="scroll-to-section"><a href="/spell">Spell Checker</a></li>
+              <li class="scroll-to-section"><a href="/grammar" class="active">Grammar Checker</a></li>
+              <li class="scroll-to-section"><a href="/summary">Summarizer</a></li>
+              <li class="scroll-to-section"><a href="/login">Login/Register</a></li>
+            </ul>
+            <a class='menu-trigger'>
+              <span>Menu</span>
+            </a>
+            <!-- ***** Menu End ***** -->
+          </nav>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- ***** Header Area End ***** -->
+
+  <div class="main-banner" id="top">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="owl-carousel owl-banner flex">
+
+            <div class="container flex">
+              <h1 style="color: #fff">Grammar Checker and Paraphraser</h1>
+              <form action="/check_grammar" class="login" method="post">
+                <div class="textbox">
+                  <textarea name="text" id="input-text">{{input}} </textarea>
+                </div>
+                <br/>
+                <button class="rounded-button" id="button">Check Grammar</button>
+
+              </form>
+              <br />
+
+              <div class="textbox">
+                <div
+                  style="border: 3px dashed #fff; border-radius: 10px;margin: auto;padding: 5px;width: 300px; height: 210px;">
+
+                  {% if error %}
+                  <h3 style="color: #fff">Corrected Sentence</h3>
+                  {{corrected_sentence}}
+                  <h3 style="color: #fff">Sentence</h3>
+                  {{sentence}}
+                  {% endif %}
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <script src="../static/vendor/jquery/jquery.min.js"></script>
+  <script src="../static/vendor/bootstrap/js/bootstrap.min.js"></script>
+  <script src="../static/assets/js/isotope.min.js"></script>
+  <script src="../static/assets/js/owl-carousel.js"></script>
+  <script src="../static/assets/js/counter.js"></script>
+  <script src="../static/assets/js/custom.js"></script>
+  <script src="../static/grammar.js"></script>
+  <!-- <script>
+    const url = 'https://textgears-textgears-v1.p.rapidapi.com/detect';
+const options = {
+	method: 'POST',
+	headers: {
+		'content-type': 'application/x-www-form-urlencoded',
+		'X-RapidAPI-Key': 'e8e41140e7msh5c7ba67e4cdf74ap1b600bjsn635b84099fab',
+		'X-RapidAPI-Host': 'textgears-textgears-v1.p.rapidapi.com'
+	},
+	body: new URLSearchParams({
+		text: 'Readability (legibility) is a feature of the text that represents ease of its perception by the reader, as well as the evaluation of its simplicity. The two main factors of readability are the printing and linguistic features of the text.    The Flesch Kinkaid Score is the most popular way to measure the readability of English text. It works on the principle of “the fewer words in the text, and the fewer syllables in them, the easier it is to perceive” and is most often used for checking essays in schools and universities. The higher the index value on a 100-point scale, the better the readability of the text.    Smart human-trained search algorithms evaluate all site content for completeness of topic disclosure, and in a form that is understandable to the reader. For this purpose, readability indexes are used. In other words, pages containing simple and clear text get higher positions in the search results. Improving the text in terms of its printing and linguistic qualities will increase the user\'s viewing time. It turns out that the readability significantly affects the ranking of sites in the search engine.'
+	})
+};
+
+try {
+	const response = await fetch(url, options);
+	const result = await response.text();
+	console.log(result);
+} catch (error) {
+	console.error(error);
+}
+  </script> -->
