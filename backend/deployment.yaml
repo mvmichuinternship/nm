@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: bots
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: theBot
+  template:
+    metadata:
+      labels:
+        app: theBot
+    spec:
+      containers:
+      - name: the-bot
+        image: icr.io/mybot/the_bot/3.0
+        ports:
+        - containerPort: 5000
